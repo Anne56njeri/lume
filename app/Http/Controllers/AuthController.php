@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Author;
+use App\User;
 use Illuminate\Http\Request;
 
-class AuthorController extends Controller
+class AuthController extends Controller
 {
   public function ShowAllUsers( Request $request)
   {
-     return response()->json(Author::all());
+     return response()->json(User::all());
   }
 }
