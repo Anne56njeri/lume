@@ -10,10 +10,9 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+$api = app('Dingo\Api\Routing\Router');
 
-$router->post(
-    'auth/users',
-    [
-       'uses' => 'AuthController@ShowAllUsers'
-    ]
-);
+$api->version('v1', [], function ($api) {
+
+    $api->get('/users', 'App\Http\Controllers\Api\UserController@getUsers');
+});
