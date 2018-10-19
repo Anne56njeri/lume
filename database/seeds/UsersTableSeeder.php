@@ -23,6 +23,7 @@ class UsersTableSeeder extends Seeder
    	            'name' => $faker->name,
    	            'email' => $faker->email,
    	            'password' =>  password_hash('123456', PASSWORD_BCRYPT),
+                'role' =>'user'
    	        ]);
    	}
        }
