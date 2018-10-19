@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
-
+use App\User;
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -17,14 +17,35 @@ class UsersTableSeeder extends Seeder
      */
      public function run()
        {
-           $faker = Faker::create();
-       	foreach (range(1,10) as $index) {
-   	        DB::table('users')->insert([
-   	            'name' => $faker->name,
-   	            'email' => $faker->email,
-   	            'password' =>  password_hash('123456', PASSWORD_BCRYPT),
-                'role' =>'user'
-   	        ]);
+         {
+         DB::table('users')->delete();
+
+         User::create([
+             'name' => 'John Doe',
+             'email' => 'john.doe@gmail.com',
+             'password' => password_hash('123456', PASSWORD_BCRYPT),
+             'role' => 'admin'
+         ]);
+         User::create([
+             'name' => 'Lisa Doe',
+             'email' => 'lisa.doe@gmail.com',
+             'password' => password_hash('123456', PASSWORD_BCRYPT),
+             'role' => 'admin'
+         ]);
+
+         User::create([
+             'name' => 'Jane Doe',
+             'email' => 'jane.doe@gmail.com',
+             'password' => password_hash('123456', PASSWORD_BCRYPT),
+             'role' => 'admin',
+         ]);
+
+         User::create([
+             'name' => 'Jason Bourne',
+             'email' => 'jason@gmail.com',
+             'password' => password_hash('123456', PASSWORD_BCRYPT),
+             'role' =>'user'
+         ]);
+        }
    	}
        }
-}
