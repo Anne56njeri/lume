@@ -15,7 +15,8 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', [], function ($api) {
 
     $api->get('/users', 'App\Http\Controllers\Api\UserController@getUsers');
-    $api->post('/createuser', 'App\Http\Controllers\Api\UserController@create');
+    $api->get('/users/{id}', 'App\Http\Controllers\Api\UserController@showOneUser');
+    $api->post('/users', 'App\Http\Controllers\Api\UserController@create');
     $api->delete('/users/{id}', 'App\Http\Controllers\Api\UserController@delete');
     $api->put('/users/{id}', 'App\Http\Controllers\Api\UserController@update');
 
