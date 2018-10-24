@@ -24,7 +24,7 @@ class AccountController extends Controller
     //function to create a new user
     public function create(Request $request)
     {
-    $account = new Account();
+    $account = new Accounts();
 
     $account->name=$request->input('name',null);
     $account->address=$request->input('address');
@@ -37,7 +37,7 @@ class AccountController extends Controller
   public function update($id,Request $request)
 
   {
-    $account=Account::findOrFail($id);
+    $account=Accounts::findOrFail($id);
     $account->update($request->all());
 
     return response()->json($account,200);
@@ -45,12 +45,12 @@ class AccountController extends Controller
   // function to display only the user whose id has been selected
   public function showOneAccount($id)
   {
-    return response()->json(Account::find($id));
+    return response()->json(Accounts::find($id));
   }
   // function to delete the user based on the id selected
     public function delete($id)
    {
-     Account::findOrFail($id)->delete();
+     Accounts::findOrFail($id)->delete();
      return response('Delted',200);
     }
 

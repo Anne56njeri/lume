@@ -20,10 +20,10 @@ $api->version('v1', [], function ($api) {
     $api->delete('/users/{id}', 'App\Http\Controllers\Api\UserController@delete');
     $api->put('/users/{id}', 'App\Http\Controllers\Api\UserController@update');
 
-    $api->get('/users', 'App\Http\Controllers\Api\AccountController@getAccounts');
-    $api->get('/users/{id}', 'App\Http\Controllers\Api\AccountController@showOneAccount');
-    $api->post('/users', 'App\Http\Controllers\Api\AccountController@create');
-    $api->delete('/users/{id}', 'App\Http\Controllers\Api\AccountController@delete');
-    $api->put('/users/{id}', 'App\Http\Controllers\Api\AccountController@update');
+    $api->get('/accounts', 'App\Http\Controllers\Api\AccountController@getAccounts');
+    $api->get('/accounts/{id}', 'App\Http\Controllers\Api\AccountController@showOneAccount');
+    $api->post('/accounts', 'App\Http\Controllers\Api\AccountController@create');
+    $api->delete('/accounts/{id}', 'App\Http\Controllers\Api\AccountController@delete');
+    $api->put('accounts/{id}', 'App\Http\Controllers\Api\AccountController@update');
 
 });
