@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     use Helpers;
-
+     // function to display all the users
     public function getUsers()
     {
 
@@ -20,6 +20,8 @@ class UserController extends Controller
         return $this->response->collection($users, new UserTransformer);
 
     }
+
+    //function to create a new user
     public function create(Request $request)
     {
     $user = new User;
@@ -32,6 +34,7 @@ class UserController extends Controller
     $user->save();
       return response()->json($user,200);
     }
+    // function to update the users data
   public function update($id,Request $request)
 
   {
@@ -40,10 +43,12 @@ class UserController extends Controller
 
     return response()->json($user,200);
   }
+  // function to display only the user whose id has been selected
   public function showOneUser($id)
   {
     return response()->json(User::find($id));
   }
+  // function to delete the user based on the id selected
     public function delete($id)
    {
      User::findOrFail($id)->delete();
