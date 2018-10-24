@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Acoounts extends Model
+class Accounts extends Model
 {
 
     /**
