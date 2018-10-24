@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
 use App\User;
+use Carbon\Carbon;
+
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -24,27 +26,36 @@ class UsersTableSeeder extends Seeder
              'name' => 'John Doe',
              'email' => 'john.doe@gmail.com',
              'password' => password_hash('123456', PASSWORD_BCRYPT),
-             'role' => 'admin'
+             'role' => 'admin',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
+
          ]);
          User::create([
              'name' => 'Lisa Doe',
              'email' => 'lisa.doe@gmail.com',
              'password' => password_hash('123456', PASSWORD_BCRYPT),
-             'role' => 'admin'
+             'role' => 'admin',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);
 
          User::create([
              'name' => 'Jane Doe',
              'email' => 'jane.doe@gmail.com',
              'password' => password_hash('123456', PASSWORD_BCRYPT),
-             'role' => 'admin',
+             'role' => 'data-enrty',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);
 
          User::create([
              'name' => 'Jason Bourne',
              'email' => 'jason@gmail.com',
              'password' => password_hash('123456', PASSWORD_BCRYPT),
-             'role' =>'user'
+             'role' =>'sales-executive',
+             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
          ]);
         }
    	}
