@@ -32,11 +32,18 @@ class UserController extends Controller
     $user->save();
       return response()->json($user,200);
     }
+  public function update($id,Request $request)
 
-public function delete($id)
-{
-  User::findOrFail($id)->delete();
-   return response('Delted',200);
-}
+  {
+    $user=User::findOrFail($id);
+    $user->update($request->all());
+    
+    return response()->json($user,200);
+  }
+    public function delete($id)
+   {
+     User::findOrFail($id)->delete();
+     return response('Delted',200);
+    }
 
 }
