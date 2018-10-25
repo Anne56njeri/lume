@@ -18,7 +18,7 @@ class MeetingsTableSeeder extends Seeder
      public function run()
        {
          {
-         DB::table('meeting')->delete();
+         DB::table('meetings')->delete();
 
          Meetings::create([
             'date' => '1st November',

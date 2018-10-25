@@ -18,7 +18,7 @@ class OpportunityTableSeeder extends Seeder
      public function run()
        {
          {
-         DB::table('opportunity')->delete();
+         DB::table('opportunities')->delete();
 
          Opportunity::create([
             'contact' => 'contact 1',

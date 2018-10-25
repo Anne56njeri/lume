@@ -13,7 +13,7 @@ class CreateOpportunityTable extends Migration
      */
     public function up()
     {
-        Schema::create('opportunity', function (Blueprint $table) {
+        Schema::create('opportunities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('contact');
             $table->string('sales_executive');
