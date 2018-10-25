@@ -26,4 +26,11 @@ $api->version('v1', [], function ($api) {
     $api->delete('/accounts/{id}', 'App\Http\Controllers\Api\AccountController@delete');
     $api->put('accounts/{id}', 'App\Http\Controllers\Api\AccountController@update');
 
+    $api->get('/contacts', 'App\Http\Controllers\Api\ContactController@getContact');
+    $api->get('/contacts/{id}', 'App\Http\Controllers\Api\ContactController@showOneContact');
+    $api->post('/contacts', 'App\Http\Controllers\Api\ContactController@create');
+    $api->delete('/contacts/{id}', 'App\Http\Controllers\Api\ContactController@delete');
+    $api->put('contacts/{id}', 'App\Http\Controllers\Api\ContactController@update');
+
+
 });
