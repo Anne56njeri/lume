@@ -20,7 +20,7 @@ class CreateOpportunityTable extends Migration
             $table->string('status');
             $table->string('description');
             $table->string('value');
-            $table->stirng('meetings')
+            $table->string('meetings');
             $table->timestamps();
         });
     }

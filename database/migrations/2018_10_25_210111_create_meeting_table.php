@@ -17,7 +17,7 @@ class CreateMeetingTable extends Migration
             $table->increments('id');
             $table->string('date');
             $table->string('location');
-            $table->string('status')
+            $table->string('status');
             $table->timestamps();
         });
     }
