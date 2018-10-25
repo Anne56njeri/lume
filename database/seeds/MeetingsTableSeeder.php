@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Meetings;
 
-class ContactTableSeeder extends Seeder
+class MeetingsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
