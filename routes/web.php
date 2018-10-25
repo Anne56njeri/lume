@@ -32,5 +32,21 @@ $api->version('v1', [], function ($api) {
     $api->delete('/contacts/{id}', 'App\Http\Controllers\Api\ContactController@delete');
     $api->put('contacts/{id}', 'App\Http\Controllers\Api\ContactController@update');
 
+    $api->get('/opportunity', 'App\Http\Controllers\Api\OpportunityController@getOpportunity');
+    $api->get('/opportunity/{id}', 'App\Http\Controllers\Api\OpportunityController@showOneOpportunity');
+    $api->post('/opportunity', 'App\Http\Controllers\Api\OpportunityController@create');
+    $api->delete('/opportunity/{id}', 'App\Http\Controllers\Api\OpportunityController@delete');
+    $api->put('opportunity/{id}', 'App\Http\Controllers\Api\OpportunityController@update');
 
+    $api->get('/meetings', 'App\Http\Controllers\Api\MeetingsController@getMeeting');
+    $api->get('/meetings/{id}', 'App\Http\Controllers\Api\MeetingsController@showOneMeeting');
+    $api->post('/meetings', 'App\Http\Controllers\Api\MeetingsController@create');
+    $api->delete('/meetings/{id}', 'App\Http\Controllers\Api\MeetingsController@delete');
+    $api->put('meetings/{id}', 'App\Http\Controllers\Api\MeetingsController@update');
+
+    $api->get('/messages', 'App\Http\Controllers\Api\ContactController@getMessage');
+    $api->get('/messages/{id}', 'App\Http\Controllers\Api\MessagesController@showOneMessage');
+    $api->post('/messages', 'App\Http\Controllers\Api\MessagesController@create');
+    $api->delete('/messages/{id}', 'App\Http\Controllers\Api\MessagesController@delete');
+    $api->put('messages/{id}', 'App\Http\Controllers\Api\MessagesController@update');
 });
