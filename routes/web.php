@@ -10,9 +10,11 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+
+
 $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', [], function ($api) {
+$api->version('v1', ['middleware' => 'api.auth'], function ($api) {
 
     $api->get('/users', 'App\Http\Controllers\Api\UserController@getUsers');
     $api->get('/users/{id}', 'App\Http\Controllers\Api\UserController@showOneUser');
@@ -44,9 +46,15 @@ $api->version('v1', [], function ($api) {
     $api->delete('/meetings/{id}', 'App\Http\Controllers\Api\MeetingsController@delete');
     $api->put('meetings/{id}', 'App\Http\Controllers\Api\MeetingsController@update');
 
-    $api->get('/messages', 'App\Http\Controllers\Api\ContactController@getMessage');
+    $api->get('/messages', 'App\Http\Controllers\Api\MessagesController@getMessage');
     $api->get('/messages/{id}', 'App\Http\Controllers\Api\MessagesController@showOneMessage');
-    $api->post('/messages', 'App\Http\Controllers\Api\MessagesController@create');
+    $api->post('/message', 'App\Http\Controllers\Api\MessagesController@create');
     $api->delete('/messages/{id}', 'App\Http\Controllers\Api\MessagesController@delete');
     $api->put('messages/{id}', 'App\Http\Controllers\Api\MessagesController@update');
+    $api->post('/messages', 'App\Http\Controllers\Api\MessagesController@create');
+
+    $api->post('/auth/login', 'App\Http\Controllers\AuthController@postLogin');
+
+
+
 });

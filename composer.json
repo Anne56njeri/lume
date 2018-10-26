@@ -7,8 +7,9 @@
     "require": {
         "php": ">=7.1.3",
         "dingo/api": "1.0.x@dev",
-        
+        "illuminate/mail": "5.7.*",
         "laravel/lumen-framework": "5.7.*",
+        "tymon/jwt-auth": "^1.0@dev",
         "vlucas/phpdotenv": "~2.2"
     },
     "require-dev": {
